@@ -23,7 +23,7 @@ let current;
 function openModal(product) {
     current = product;
     mImg.src = product.img;
-    mName.textContent = product.nombre + " — $" + product.precio;
+    mName.textContent = product.nombre;
     mDesc.textContent = product.descripcion;
     mSize.innerHTML = product.tallesDisponibles
         .map((t) => `<option>${t}</option>`)
@@ -102,7 +102,6 @@ function renderCart() {
               <div class="text-sm text-gray-600">Talle: ${i.size} · Color: ${i.color} · Cant: ${i.qty}</div>
             </div>
             <div class="text-right">
-              <div class="font-semibold">$${i.price * i.qty}</div>
               <button data-remove="${i.id}-${i.size}-${i.color}" class="text-sm text-red-600">Quitar</button>
             </div>
           </div>
@@ -134,7 +133,7 @@ clearBtn?.addEventListener("click", () => clearCart());
 confirmBtn?.addEventListener("click", () => {
     const items = loadCart();
     if (!items.length) return alert("Tu carrito está vacío.");
-    const text = buildOrderText("DEMO", items, clientName.value.trim());
+    const text = buildOrderText("Lorena", items, clientName.value.trim());
     const url = buildWhatsAppUrl("5491162851665", text); // <-- reemplazar por número real
     window.open(url, "_blank");
 });
@@ -158,7 +157,7 @@ input?.addEventListener("input", () => {
             <div class="p-4">
               <h3 class="font-semibold group-hover:text-sky-600 transition-colors">${p.nombre}</h3>
               <p class="text-sm text-gray-500">${p.descripcion}</p>
-              <p class="mt-2 font-bold">$${p.precio}</p>
+              
             </div>
           </article>
         `
