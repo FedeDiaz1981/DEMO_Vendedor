@@ -15,8 +15,16 @@ export function buildOrderText(businessName, items, client = '') {
 }
 
 export function buildWhatsAppUrl(phone, text) {
-  const base = `https://wa.me/${phone}`;
-  return `${base}?text=${encodeURIComponent(text)}`;
+  const encoded = encodeURIComponent(text);
+  const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+  // Mobile → abre app/web según corresponda
+  // Desktop → WhatsApp Web
+  if (isMobile) {
+    return `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+  } else {
+    return `https://web.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+  }
 }
 
 
