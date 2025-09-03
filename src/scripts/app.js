@@ -109,8 +109,8 @@ function renderCart() {
         )
         .join("");
     const total = cartTotal(items);
-    cartTotalTop.textContent = "$" + total;
-    cartTotalBottom.textContent = "$" + total;
+    cartTotalTop.textContent = 0;//"$" + total;
+    cartTotalBottom.textContent = 0; //"$" + total;
 
     cartItems.querySelectorAll("[data-remove]").forEach((btn) => {
         btn.addEventListener("click", () => {
