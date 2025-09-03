@@ -1,0 +1,11 @@
+---
+const { product } = Astro.props;
+---
+<article class="card overflow-hidden cursor-pointer group" data-open-modal data-id={product.id}>
+  <img src={product.img} alt={product.nombre} class="aspect-square w-full object-cover" loading="lazy" />
+  <div class="p-4">
+    <h3 class="font-semibold group-hover:text-sky-600 transition-colors">{product.nombre}</h3>
+    <p class="text-sm text-gray-500 line-clamp-2">{product.descripcion}</p>
+    <p class="mt-2 font-bold">${product.precio}</p>
+  </div>
+</article>

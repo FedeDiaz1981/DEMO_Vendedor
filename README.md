@@ -1,4 +1,4 @@
-# Calabria • Demo e-commerce con WhatsApp (Astro + Tailwind + Motion One)
+# Demo e-commerce con WhatsApp (Astro + Tailwind + Motion One)
 
 ## Requisitos
 - Node 18+
