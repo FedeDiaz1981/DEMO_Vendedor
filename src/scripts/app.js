@@ -134,7 +134,7 @@ confirmBtn?.addEventListener("click", () => {
     const items = loadCart();
     if (!items.length) return alert("Tu carrito está vacío.");
     const text = buildOrderText("Lorena", items, clientName.value.trim());
-    const url = buildWhatsAppUrl("5491162851665", text); // <-- reemplazar por número real
+    const url = buildWhatsAppUrl("5491160422975", text); // <-- reemplazar por número real
     window.open(url, "_blank");
 });
 
